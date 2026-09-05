@@ -3,825 +3,876 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Galaxy General Store - stationery, gifts, toys, watches and everyday essentials in Akot Fail, Akola.">
+<title>Galaxy General Store|Akola</title>
 
-<title>Galaxy General Store | Nagpur</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-    scroll-behavior:smooth;
+:root{
+  --primary:#1d4ed8;
+  --primary-dark:#163da8;
+  --accent:#f59e0b;
+  --accent-dark:#d97706;
+  --navy:#0f172a;
+  --text:#334155;
+  --muted:#64748b;
+  --bg:#f7f9fc;
+  --white:#fff;
+  --border:#e2e8f0;
+  --shadow:0 18px 50px rgba(15,23,42,.09);
+  --radius:22px;
 }
 
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+html{scroll-padding-top:90px}
 body{
-    background:#020617;
-    color:white;
-    overflow-x:hidden;
+  font-family:'Inter',sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  overflow-x:hidden;
 }
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+button{font:inherit}
 
+.container{width:min(1180px,92%);margin:auto}
 
-body::before{
-    content:"";
-    position:fixed;
-    width:100%;
-    height:100%;
-    background:
-        radial-gradient(circle at 20% 20%,rgba(0,119,255,.25),transparent 30%),
-        radial-gradient(circle at 80% 70%,rgba(162,0,255,.25),transparent 30%);
-    z-index:-2;
-}
-
-.stars{
-    position:fixed;
-    width:100%;
-    height:100%;
-    z-index:-1;
-    background-image:
-        radial-gradient(2px 2px at 20px 30px,#fff,transparent),
-        radial-gradient(1px 1px at 90px 80px,#fff,transparent),
-        radial-gradient(2px 2px at 150px 150px,#fff,transparent),
-        radial-gradient(1px 1px at 250px 100px,#fff,transparent),
-        radial-gradient(2px 2px at 350px 200px,#fff,transparent),
-        radial-gradient(1px 1px at 450px 50px,#fff,transparent);
-    background-size:500px 300px;
-    animation:starsMove 20s linear infinite;
-    opacity:.7;
-}
-
-@keyframes starsMove{
-    from{
-        transform:translateY(0);
-    }
-    to{
-        transform:translateY(-300px);
-    }
-}
-
-
+/* HEADER */
 header{
-    width:100%;
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:1000;
-    background:rgba(2,6,23,.75);
-    backdrop-filter:blur(15px);
-    border-bottom:1px solid rgba(255,255,255,.1);
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(226,232,240,.8);
 }
-
 .navbar{
-    max-width:1250px;
-    margin:auto;
-    padding:18px 30px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
 }
-
 .brand{
-    display:flex;
-    align-items:center;
-    gap:12px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:max-content;
 }
-
 .brand-logo{
-    width:48px;
-    height:48px;
-    border-radius:50%;
-    object-fit:cover;
-    border:2px solid #ffd700;
-    box-shadow:0 0 15px #ffd700;
+  width:48px;
+  height:48px;
+  object-fit:cover;
+  border-radius:14px;
+  border:2px solid #fff;
+  box-shadow:0 8px 25px rgba(29,78,216,.2);
 }
-
 .brand-name{
-    font-size:22px;
-    font-weight:700;
-    color:#ffd700;
+  font-family:'Poppins',sans-serif;
+  font-size:18px;
+  font-weight:800;
+  color:var(--navy);
 }
+.brand-name span{color:var(--primary)}
 
 .nav-links{
-    display:flex;
-    gap:35px;
-    list-style:none;
+  list-style:none;
+  display:flex;
+  align-items:center;
+  gap:8px;
 }
-
 .nav-links a{
-    color:white;
-    text-decoration:none;
-    font-size:15px;
-    font-weight:500;
-    transition:.3s;
+  display:block;
+  padding:10px 15px;
+  color:#475569;
+  font-size:14px;
+  font-weight:600;
+  border-radius:10px;
+  transition:.25s ease;
 }
-
 .nav-links a:hover{
-    color:#ffd700;
+  color:var(--primary);
+  background:#eff6ff;
+}
+.nav-cta{
+  background:var(--primary)!important;
+  color:#fff!important;
+  box-shadow:0 8px 20px rgba(29,78,216,.22);
+}
+.nav-cta:hover{
+  background:var(--primary-dark)!important;
+  transform:translateY(-2px);
 }
 
+.menu-btn{
+  display:none;
+  width:44px;
+  height:44px;
+  border:1px solid var(--border);
+  background:#fff;
+  border-radius:12px;
+  cursor:pointer;
+  font-size:22px;
+  color:var(--navy);
+}
 
+/* HERO */
 .hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:130px 30px 80px;
+  position:relative;
+  min-height:760px;
+  padding:150px 0 100px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 10% 15%,rgba(59,130,246,.12),transparent 28%),
+    radial-gradient(circle at 90% 20%,rgba(245,158,11,.12),transparent 25%),
+    linear-gradient(135deg,#fff 0%,#f5f8ff 55%,#fffaf2 100%);
+}
+.hero::before,.hero::after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  filter:blur(2px);
+  pointer-events:none;
+}
+.hero::before{
+  width:280px;height:280px;
+  background:rgba(59,130,246,.09);
+  top:100px;left:-130px;
+}
+.hero::after{
+  width:240px;height:240px;
+  background:rgba(245,158,11,.08);
+  right:-100px;bottom:30px;
 }
 
-.hero-container{
-    max-width:1250px;
-    width:100%;
-    display:grid;
-    grid-template-columns:1.2fr .8fr;
-    align-items:center;
-    gap:60px;
+.hero-grid{
+  position:relative;
+  z-index:1;
+  min-height:510px;
+  display:grid;
+  grid-template-columns:1.12fr .88fr;
+  align-items:center;
+  gap:70px;
 }
-
-.hero-content{
-    animation:fadeIn 1.2s ease;
+.hero-copy{max-width:650px}
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 13px;
+  border-radius:999px;
+  background:#fff;
+  color:var(--primary);
+  border:1px solid #dbeafe;
+  box-shadow:0 8px 25px rgba(15,23,42,.06);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+  margin-bottom:20px;
 }
-
-.badge{
-    display:inline-block;
-    padding:9px 20px;
-    border-radius:50px;
-    border:1px solid rgba(255,215,0,.5);
-    background:rgba(255,215,0,.08);
-    color:#ffd700;
-    margin-bottom:25px;
-    font-size:14px;
+.dot{
+  width:8px;height:8px;border-radius:50%;
+  background:#22c55e;
+  box-shadow:0 0 0 5px #dcfce7;
 }
-
 .hero h1{
-    font-size:clamp(45px,6vw,82px);
-    line-height:1.05;
-    margin-bottom:25px;
+  font-family:'Poppins',sans-serif;
+  font-size:clamp(42px,5.2vw,72px);
+  line-height:1.06;
+  letter-spacing:-2.5px;
+  color:var(--navy);
+  margin-bottom:22px;
 }
-
-.hero h1 span{
-    color:#ffd700;
-    text-shadow:0 0 25px rgba(255,215,0,.4);
-}
-
+.hero h1 .blue{color:var(--primary)}
+.hero h1 .gold{color:var(--accent-dark)}
 .hero p{
-    max-width:650px;
-    color:#cbd5e1;
-    font-size:19px;
-    line-height:1.8;
-    margin-bottom:35px;
+  max-width:590px;
+  color:var(--muted);
+  font-size:17px;
+  line-height:1.8;
+  margin-bottom:30px;
 }
-
-.buttons{
-    display:flex;
-    gap:18px;
-    flex-wrap:wrap;
+.home-address{
+  display:inline-block;
+  margin:0 0 24px;
+  padding:12px 16px;
+  border-radius:14px;
+  background:#fff;
+  border:1px solid #dbeafe;
+  box-shadow:0 8px 20px rgba(15,23,42,.06);
+  color:var(--navy);
+  font-size:14px;
+  line-height:1.55;
 }
+.home-address strong{font-weight:800}
 
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
 .btn{
-    display:inline-block;
-    padding:15px 30px;
-    border-radius:50px;
-    text-decoration:none;
-    font-weight:600;
-    transition:.4s;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  min-height:52px;
+  padding:0 21px;
+  border-radius:14px;
+  font-weight:700;
+  font-size:14px;
+  transition:.3s ease;
 }
-
-.primary{
-    background:linear-gradient(45deg,#ffd700,#ff9d00);
-    color:#111;
-    box-shadow:0 0 25px rgba(255,215,0,.3);
+.btn-primary{
+  color:#fff;
+  background:linear-gradient(135deg,var(--primary),#3b82f6);
+  box-shadow:0 13px 28px rgba(29,78,216,.23);
 }
-
-.primary:hover{
-    transform:translateY(-5px);
-    box-shadow:0 10px 35px rgba(255,215,0,.5);
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 35px rgba(29,78,216,.28)}
+.btn-outline{
+  color:var(--navy);
+  background:#fff;
+  border:1px solid var(--border);
+  box-shadow:0 8px 20px rgba(15,23,42,.05);
 }
+.btn-outline:hover{transform:translateY(-3px);border-color:#bfdbfe;color:var(--primary)}
 
-.secondary{
-    border:1px solid rgba(255,255,255,.25);
-    color:white;
-    background:rgba(255,255,255,.06);
+.hero-stats{
+  display:flex;
+  flex-wrap:wrap;
+  gap:25px;
+  margin-top:38px;
 }
-
-.secondary:hover{
-    background:white;
-    color:#111;
-    transform:translateY(-5px);
+.stat strong{
+  display:block;
+  font-family:'Poppins',sans-serif;
+  font-size:20px;
+  color:var(--navy);
 }
+.stat span{font-size:12px;color:var(--muted)}
 
-
-.hero-logo{
-    display:flex;
-    justify-content:center;
-    align-items:center;
+.hero-visual{
+  position:relative;
+  display:flex;
+  justify-content:center;
 }
-
-.logo-wrapper{
-    width:420px;
-    height:420px;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    position:relative;
-    background:rgba(255,255,255,.04);
-    border:1px solid rgba(255,215,0,.3);
-    box-shadow:
-        0 0 50px rgba(255,215,0,.25),
-        inset 0 0 50px rgba(0,100,255,.15);
-    animation:float 5s ease-in-out infinite;
+.logo-card{
+  width:min(390px,82vw);
+  aspect-ratio:1;
+  display:grid;
+  place-items:center;
+  border-radius:40px;
+  background:rgba(255,255,255,.78);
+  border:1px solid rgba(255,255,255,.95);
+  box-shadow:0 30px 70px rgba(15,23,42,.13);
+  transform:rotate(2deg);
+  animation:float 5s ease-in-out infinite;
 }
-
-.logo-wrapper::before{
-    content:"";
-    position:absolute;
-    width:460px;
-    height:460px;
-    border:1px solid rgba(255,215,0,.25);
-    border-radius:50%;
-    animation:rotate 15s linear infinite;
+.logo-card::before{
+  content:"";
+  position:absolute;
+  inset:22px;
+  border-radius:30px;
+  border:1px dashed #cbd5e1;
 }
-
-.logo{
-    width:310px;
-    height:310px;
-    object-fit:cover;
-    border-radius:50%;
-    border:7px solid #ffd700;
-    box-shadow:
-        0 0 20px #ffd700,
-        0 0 60px rgba(255,215,0,.5);
+.logo-card img{
+  width:68%;
+  aspect-ratio:1;
+  object-fit:cover;
+  border-radius:28px;
+  box-shadow:0 18px 45px rgba(15,23,42,.15);
+  position:relative;
+  z-index:2;
 }
+.floating-badge{
+  position:absolute;
+  z-index:3;
+  right:-18px;
+  top:42px;
+  padding:13px 17px;
+  border-radius:15px;
+  background:#fff;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+  font-size:12px;
+  font-weight:800;
+  color:var(--navy);
+}
+.floating-badge small{display:block;color:var(--muted);font-weight:500;margin-top:2px}
 
 @keyframes float{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-18px);
-    }
+  0%,100%{transform:translateY(0) rotate(2deg)}
+  50%{transform:translateY(-12px) rotate(2deg)}
 }
 
-@keyframes rotate{
-    from{
-        transform:rotate(0deg);
-    }
-    to{
-        transform:rotate(360deg);
-    }
+/* SECTIONS */
+section{padding:95px 0}
+.section-head{text-align:center;max-width:650px;margin:0 auto 45px}
+.section-label{
+  color:var(--primary);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
 }
-
-
-section{
-    padding:100px 30px;
+.section-head h2{
+  font-family:'Poppins',sans-serif;
+  color:var(--navy);
+  font-size:clamp(30px,4vw,44px);
+  line-height:1.15;
+  margin:9px 0 13px;
 }
+.section-head p{color:var(--muted);line-height:1.7;font-size:15px}
 
-.section-container{
-    max-width:1250px;
-    margin:auto;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:60px;
-}
-
-.section-title h2{
-    font-size:45px;
-    margin-bottom:15px;
-}
-
-.section-title h2 span{
-    color:#ffd700;
-}
-
-.section-title p{
-    color:#94a3b8;
-}
-
-
+/* PRODUCTS */
+.products-section{background:#fff}
 .products{
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:22px;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:18px;
 }
-
 .card{
-    padding:35px 20px;
-    text-align:center;
-    background:rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.1);
-    border-radius:20px;
-    backdrop-filter:blur(10px);
-    transition:.4s;
+  position:relative;
+  overflow:hidden;
+  padding:27px 21px 24px;
+  min-height:245px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:0 8px 25px rgba(15,23,42,.045);
+  transition:.35s ease;
+  opacity:0;
+  transform:translateY(30px);
 }
-
+.card.show{opacity:1;transform:translateY(0)}
+.card::before{
+  content:"";
+  position:absolute;
+  top:0;left:0;
+  width:100%;height:4px;
+  background:linear-gradient(90deg,var(--primary),#60a5fa,var(--accent));
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:.35s ease;
+}
 .card:hover{
-    transform:translateY(-12px);
-    border-color:#ffd700;
-    box-shadow:0 15px 40px rgba(255,215,0,.15);
+  transform:translateY(-10px)!important;
+  box-shadow:0 22px 45px rgba(15,23,42,.12);
+  border-color:#dbeafe;
 }
-
+.card:hover::before{transform:scaleX(1)}
 .card-icon{
-    font-size:48px;
-    margin-bottom:20px;
+  width:62px;height:62px;
+  display:grid;place-items:center;
+  border-radius:18px;
+  background:linear-gradient(135deg,#eff6ff,#fff7ed);
+  font-size:29px;
+  margin-bottom:22px;
+  transition:.35s ease;
 }
-
+.card:hover .card-icon{transform:rotate(-7deg) scale(1.08)}
 .card h3{
-    font-size:18px;
-    margin-bottom:10px;
+  font-family:'Poppins',sans-serif;
+  font-size:17px;
+  color:var(--navy);
+  margin-bottom:8px;
+}
+.card p{font-size:13px;line-height:1.7;color:var(--muted)}
+.card-link{
+  display:inline-block;
+  margin-top:18px;
+  color:var(--primary);
+  font-size:12px;
+  font-weight:800;
 }
 
-.card p{
-    color:#94a3b8;
-    font-size:13px;
-}
-
-
-.about{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:60px;
-    align-items:center;
-}
-
-.about-box{
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.1);
-    padding:45px;
-    border-radius:25px;
-}
-
-.about h2{
-    font-size:42px;
-    margin-bottom:20px;
-}
-
-.about h2 span{
-    color:#ffd700;
-}
-
-.about p{
-    color:#cbd5e1;
-    line-height:1.9;
-    margin-bottom:20px;
-}
-
+/* FEATURE STRIP */
 .features{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
+  padding-top:0;
+  background:#fff;
 }
-
+.feature-strip{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
 .feature{
-    padding:18px;
-    background:rgba(255,255,255,.05);
-    border-radius:12px;
+  display:flex;
+  align-items:center;
+  gap:15px;
+  padding:20px;
+  background:#f8fafc;
+  border:1px solid var(--border);
+  border-radius:18px;
+}
+.feature-icon{
+  width:48px;height:48px;flex:0 0 48px;
+  display:grid;place-items:center;
+  border-radius:14px;
+  background:#eff6ff;
+  font-size:22px;
+}
+.feature h4{color:var(--navy);font-size:14px;margin-bottom:3px}
+.feature p{font-size:12px;color:var(--muted)}
+
+/* ABOUT */
+.about-section{background:var(--bg)}
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:70px;
+}
+.about-visual{
+  position:relative;
+  min-height:390px;
+  display:grid;
+  place-items:center;
+}
+.about-box{
+  width:min(420px,90%);
+  padding:38px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:30px;
+  box-shadow:var(--shadow);
+}
+.about-box .big-icon{font-size:55px;margin-bottom:18px}
+.about-box h3{font-family:'Poppins';font-size:25px;color:var(--navy);margin-bottom:10px}
+.about-box p{color:var(--muted);line-height:1.8;font-size:14px}
+.about-tag{
+  position:absolute;
+  bottom:25px;
+  right:5%;
+  padding:14px 18px;
+  background:var(--navy);
+  color:#fff;
+  border-radius:16px;
+  font-size:12px;
+  font-weight:700;
+  box-shadow:var(--shadow);
+}
+.about-copy .section-label{text-align:left}
+.about-copy h2{
+  font-family:'Poppins';
+  color:var(--navy);
+  font-size:clamp(30px,4vw,43px);
+  line-height:1.15;
+  margin:10px 0 17px;
+}
+.about-copy>p{color:var(--muted);line-height:1.8;font-size:15px}
+.check-list{
+  list-style:none;
+  margin-top:24px;
+  display:grid;
+  gap:13px;
+}
+.check-list li{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  font-size:14px;
+  color:#475569;
+}
+.check-list b{
+  width:21px;height:21px;flex:0 0 21px;
+  display:grid;place-items:center;
+  border-radius:50%;
+  background:#dcfce7;
+  color:#16a34a;
+  font-size:12px;
 }
 
-.feature strong{
-    color:#ffd700;
-}
-
-
+/* CONTACT */
+.contact-section{background:#fff}
 .contact-box{
-    max-width:850px;
-    margin:auto;
-    text-align:center;
-    padding:60px 30px;
-    border-radius:30px;
-    background:
-        linear-gradient(135deg,
-        rgba(0,78,146,.35),
-        rgba(131,58,180,.25));
-    border:1px solid rgba(255,255,255,.15);
+  position:relative;
+  overflow:hidden;
+  padding:55px;
+  border-radius:30px;
+  background:linear-gradient(135deg,#eff6ff 0%,#fff 55%,#fff7ed 100%);
+  border:1px solid #dbeafe;
+  box-shadow:var(--shadow);
 }
-
-.contact-box h2{
-    font-size:45px;
-    margin-bottom:20px;
+.contact-box::after{
+  content:"";
+  position:absolute;
+  width:250px;height:250px;
+  right:-80px;top:-100px;
+  border-radius:50%;
+  background:rgba(245,158,11,.11);
 }
-
-.contact-box p{
-    color:#cbd5e1;
-    margin-bottom:30px;
-    line-height:1.8;
+.contact-content{
+  position:relative;
+  z-index:2;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:30px;
 }
+.contact-content h2{
+  font-family:'Poppins';
+  color:var(--navy);
+  font-size:clamp(27px,4vw,40px);
+  margin-bottom:9px;
+}
+.contact-content p{color:var(--muted);line-height:1.7;font-size:14px}
+.contact-actions{display:flex;gap:10px;flex-wrap:wrap}
 
-
+/* FOOTER */
 footer{
-    padding:35px 20px;
-    text-align:center;
-    border-top:1px solid rgba(255,255,255,.1);
-    color:#94a3b8;
+  background:var(--navy);
+  color:#cbd5e1;
+  padding:35px 0 25px;
+}
+.footer-grid{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:25px;
+}
+.footer-brand{display:flex;align-items:center;gap:10px}
+.footer-brand img{width:40px;height:40px;object-fit:cover;border-radius:11px}
+.footer-brand strong{color:#fff;font-family:'Poppins'}
+.footer-text{font-size:12px;color:#94a3b8}
+.footer-links{display:flex;gap:18px;font-size:12px}
+.footer-links a:hover{color:#fff}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .7s ease,transform .7s ease}
+.reveal.show{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:1050px){
+  .products{grid-template-columns:repeat(3,1fr)}
+  .hero-grid{grid-template-columns:1fr;gap:55px;text-align:center}
+  .hero-copy{margin:auto}
+  .hero p{margin-left:auto;margin-right:auto}
+  .hero-actions,.hero-stats{justify-content:center}
+  .hero-visual{order:-1}
+  .logo-card{width:300px}
+  .about-grid{gap:40px}
 }
 
-footer strong{
-    color:#ffd700;
+@media(max-width:760px){
+  .container{width:min(94%,1180px)}
+  .hero-grid{gap:35px}
+  .hero-copy{max-width:100%}
+  .hero-actions{width:100%}
+  .hero-actions .btn{flex:1 1 100%}
+  .contact-actions{width:100%}
+  .contact-actions .btn{flex:1 1 100%}
+  .navbar{min-height:68px}
+  .brand-logo{width:43px;height:43px}
+  .brand-name{font-size:15px}
+  .menu-btn{display:block}
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:68px;
+    left:4%;
+    right:4%;
+    padding:10px;
+    flex-direction:column;
+    align-items:stretch;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:17px;
+    box-shadow:0 20px 45px rgba(15,23,42,.12);
+  }
+  .nav-links.active{display:flex}
+  .nav-links a{text-align:center;padding:13px}
+  .hero{padding:120px 0 75px;min-height:auto}
+  section{padding:70px 0}
+  .products{grid-template-columns:repeat(2,1fr)}
+  .feature-strip{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr}
+  .about-copy{order:-1}
+  .contact-box{padding:35px 25px}
+  .contact-content{flex-direction:column;align-items:flex-start}
+  .footer-grid{flex-direction:column;text-align:center}
+  .footer-brand{justify-content:center}
 }
 
-
-@keyframes fadeIn{
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+@media(max-width:500px){
+  .home-address{
+    width:100%;
+    margin-bottom:18px;
+    padding:12px 13px;
+    font-size:13px;
+    text-align:left;
+  }
+  .hero-copy{width:100%}
+  .container{width:90%}
+  .hero h1{font-size:40px;letter-spacing:-1.6px}
+  .hero p{font-size:14px}
+  .hero-actions{display:grid;grid-template-columns:1fr;width:100%}
+  .btn{width:100%}
+  .hero-stats{gap:18px}
+  .stat{min-width:85px}
+  .logo-card{width:245px;border-radius:30px}
+  .logo-card::before{inset:15px;border-radius:23px}
+  .floating-badge{right:-8px;top:22px}
+  .products{grid-template-columns:1fr}
+  .card{min-height:auto}
+  .section-head{margin-bottom:30px}
+  .about-box{padding:28px}
+  .about-tag{right:0;bottom:5px}
+  .contact-actions{width:100%;display:grid}
+  .footer-links{flex-wrap:wrap;justify-content:center}
 }
-
-
-@media(max-width:1000px){
-
-    .hero-container{
-        grid-template-columns:1fr;
-        text-align:center;
-    }
-
-    .hero p{
-        margin-left:auto;
-        margin-right:auto;
-    }
-
-    .buttons{
-        justify-content:center;
-    }
-
-    .products{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .about{
-        grid-template-columns:1fr;
-    }
-
-    .hero-logo{
-        order:-1;
-    }
-
-}
-
-@media(max-width:600px){
-
-    .navbar{
-        padding:15px 18px;
-    }
-
-    .brand-name{
-        font-size:17px;
-    }
-
-    .nav-links{
-        display:none;
-    }
-
-    .hero{
-        padding-top:120px;
-    }
-
-    .logo-wrapper{
-        width:280px;
-        height:280px;
-    }
-
-    .logo-wrapper::before{
-        width:310px;
-        height:310px;
-    }
-
-    .logo{
-        width:210px;
-        height:210px;
-    }
-
-    .hero h1{
-        font-size:45px;
-    }
-
-    .hero p{
-        font-size:16px;
-    }
-
-    .products{
-        grid-template-columns:1fr;
-    }
-
-    .section-title h2{
-        font-size:35px;
-    }
-
-    .about h2{
-        font-size:35px;
-    }
-
-    .features{
-        grid-template-columns:1fr;
-    }
-
-}
-
 </style>
 </head>
 
 <body>
 
-<div class="stars"></div>
-
-
 <header>
+  <nav class="navbar container">
+    <a class="brand" href="#home" aria-label="Galaxy General Store home">
+      <img src="galaxy.jpg" class="brand-logo" alt="Galaxy General Store logo">
+      <div class="brand-name">Galaxy <span>General Store</span></div>
+    </a>
 
-<nav class="navbar">
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu()">☰</button>
 
-<div class="brand">
-
-<img src="galaxy.html.jpeg" class="brand-logo">
-
-<div class="brand-name">
-Galaxy General Store
-</div>
-
-</div>
-
-<ul class="nav-links">
-
-<li><a href="#home">Home</a></li>
-<li><a href="#products">Products</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#contact">Contact</a></li>
-
-</ul>
-
-</nav>
-
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a class="nav-cta" href="tel:+918983651722" aria-label="Call Galaxy General Store directly">📞 Call Now</a></li>
+    </ul>
+  </nav>
 </header>
 
-
+<main>
 
 <section class="hero" id="home">
+  <div class="container hero-grid">
 
-<div class="hero-container">
+    <div class="hero-copy reveal">
+      <div class="eyebrow"><span class="dot"></span> Your everyday shopping destination</div>
 
-<div class="hero-content">
+      <h1>
+        Everything You Need,<br>
+        <span class="blue">All in One</span> <span class="gold">Place.</span>
+      </h1>
 
-<div class="badge">
-✨ Your Everyday Shopping Destination
-</div>
+      <p>
+        Welcome to Galaxy General Store — a convenient destination for
+        stationery, gifts, toys, watches and everyday essentials.
+        Quality products, friendly service and a shopping experience you can trust.
+      </p>
 
-<h1>
-Welcome to<br>
-<span>Galaxy General Store</span>
-</h1>
+      <div class="home-address" aria-label="Store address">
+        📍 <strong>Galaxy General Store, Akot Fail, near Famous Bakery, Akola</strong>
+      </div>
 
-<p>
-Discover stationery, toys, gift items, watches,
-school essentials and much more — all under one roof.
-Quality products, great variety and friendly service.
-</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-primary">🛍️ Explore Products</a>
+        <a href="https://www.instagram.com/galaxygenralstore0/" target="_blank" rel="noopener" class="btn btn-outline">📷 Follow on Instagram</a>
+      </div>
 
-<div class="buttons">
+      <div class="hero-stats">
+        <div class="stat"><strong>100+</strong><span>Product Categories</span></div>
+        <div class="stat"><strong>Local</strong><span>Friendly Service</span></div>
+        <div class="stat"><strong>Daily</strong><span>Everyday Essentials</span></div>
+      </div>
+    </div>
 
-<a href="#products" class="btn primary">
-🛍️ Explore Products
-</a>
+    <div class="hero-visual reveal">
+      <div class="logo-card">
+        <img src="galaxy.html.jpeg" alt="Galaxy General Store">
+        <div class="floating-badge">⭐ Trusted Store<small>Quality & convenience</small></div>
+      </div>
+    </div>
 
-<a href="https://www.instagram.com/galaxygenralstore0/"
-target="_blank"
-class="btn secondary">
-📷 Instagram
-</a>
-
-</div>
-
-</div>
-
-
-<div class="hero-logo">
-
-<div class="logo-wrapper">
-
-<img src="galaxy.html.jpeg"
-alt="Galaxy General Store"
-class="logo">
-
-</div>
-
-</div>
-
-</div>
-
+  </div>
 </section>
 
+<section class="products-section" id="products">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-label">What we offer</div>
+      <h2>Shop Your Everyday Favorites</h2>
+      <p>Explore our popular categories, carefully selected for school, home, gifting and everyday use.</p>
+    </div>
 
+    <div class="products">
 
-<section id="products">
+      <article class="card">
+        <div class="card-icon">📚</div>
+        <h3>Stationery</h3>
+        <p>Useful school and office stationery for everyday needs.</p>
+        <a class="card-link" href="tel:+918983651722">Enquire →</a>
+      </article>
 
-<div class="section-container">
+      <article class="card">
+        <div class="card-icon">🖊️</div>
+        <h3>Pens & Notebooks</h3>
+        <p>Writing essentials including pens, notebooks and more.</p>
+        <a class="card-link" href="tel:+918983651722">Enquire →</a>
+      </article>
 
-<div class="section-title">
+      <article class="card">
+        <div class="card-icon">🎁</div>
+        <h3>Gift Items</h3>
+        <p>Thoughtful and attractive gift items for special occasions.</p>
+        <a class="card-link" href="tel:+918983651722">Enquire →</a>
+      </article>
 
-<h2>What We <span>Offer</span></h2>
+      <article class="card">
+        <div class="card-icon">🧸</div>
+        <h3>Toys</h3>
+        <p>Fun and exciting toys for children and family moments.</p>
+        <a class="card-link" href="tel:+918983651722">Enquire →</a>
+      </article>
 
-<p>
-Everything you need for school, gifting and everyday shopping.
-</p>
+      <article class="card">
+        <div class="card-icon">⌚</div>
+        <h3>Watches</h3>
+        <p>Stylish watches and accessories for different tastes.</p>
+        <a class="card-link" href="tel:+918983651722">Enquire →</a>
+      </article>
 
-</div>
-
-
-<div class="products">
-
-<div class="card">
-
-<div class="card-icon">📚</div>
-
-<h3>Stationery</h3>
-
-<p>
-School and office stationery for everyday needs.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-icon">🖊️</div>
-
-<h3>Pens & Notebooks</h3>
-
-<p>
-Quality pens, notebooks and writing essentials.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-icon">🎁</div>
-
-<h3>Gift Items</h3>
-
-<p>
-Beautiful gift items for every special occasion.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-icon">🧸</div>
-
-<h3>Toys</h3>
-
-<p>
-Fun and exciting toys for children.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-icon">⌚</div>
-
-<h3>Watches</h3>
-
-<p>
-Stylish watches and accessories for everyone.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
+    </div>
+  </div>
 </section>
 
-
-
-<section id="about">
-
-<div class="section-container">
-
-<div class="about">
-
-<div>
-
-<h2>
-Why Choose <span>Galaxy?</span>
-</h2>
-
-<p>
-Galaxy General Store is your convenient destination
-for everyday products, school supplies, gifts,
-toys and accessories.
-</p>
-
-<p>
-We aim to provide a wide range of useful and
-interesting products while making your shopping
-experience simple and enjoyable.
-</p>
-
-</div>
-
-
-<div class="about-box">
-
-<div class="features">
-
-<div class="feature">
-<strong>✓ Variety</strong>
-<br>
-Wide range of products
-</div>
-
-<div class="feature">
-<strong>✓ Quality</strong>
-<br>
-Products you can trust
-</div>
-
-<div class="feature">
-<strong>✓ Convenience</strong>
-<br>
-Everything in one place
-</div>
-
-<div class="feature">
-<strong>✓ Friendly Service</strong>
-<br>
-Customer-focused shopping
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
+<section class="features">
+  <div class="container feature-strip">
+    <div class="feature reveal">
+      <div class="feature-icon">✨</div>
+      <div><h4>Quality Products</h4><p>Selected for everyday value.</p></div>
+    </div>
+    <div class="feature reveal">
+      <div class="feature-icon">🤝</div>
+      <div><h4>Friendly Service</h4><p>Helpful and customer-focused.</p></div>
+    </div>
+    <div class="feature reveal">
+      <div class="feature-icon">🛍️</div>
+      <div><h4>Convenient Shopping</h4><p>Everyday essentials in one place.</p></div>
+    </div>
+  </div>
 </section>
 
+<section class="about-section" id="about">
+  <div class="container about-grid">
 
+    <div class="about-visual reveal">
+      <div class="about-box">
+        <div class="big-icon">🏪</div>
+        <h3>Galaxy General Store</h3>
+        <p>A simple, convenient place to discover useful products for school, gifting, play and everyday life.</p>
+      </div>
+      <div class="about-tag">Made for everyday shopping</div>
+    </div>
 
-<section id="contact">
+    <div class="about-copy reveal">
+      <div class="section-label">About us</div>
+      <h2>Your Local Store, Made Simple.</h2>
+      <p>
+        We aim to make everyday shopping convenient by bringing useful
+        products and popular categories together under one roof.
+        Whether you need stationery, a gift, a toy or a stylish watch,
+        Galaxy General Store is here to help.
+      </p>
 
-<div class="section-container">
+      <ul class="check-list">
+        <li><b>✓</b><span>Everyday products for practical needs</span></li>
+        <li><b>✓</b><span>Multiple categories in one convenient place</span></li>
+        <li><b>✓</b><span>Friendly local customer service</span></li>
+      </ul>
+    </div>
 
-<div class="contact-box">
-
-<h2>
-Visit <span style="color:#ffd700;">Galaxy</span>
-</h2>
-
-<p>
-Looking for stationery, gifts, toys, watches
-or everyday essentials?
-
-Follow us on Instagram and stay connected
-with Galaxy General Store.
-</p>
-
-<a href="https://www.instagram.com/galaxygenralstore0/"
-target="_blank"
-class="btn primary">
-
- Follow @galaxygenralstore0
-
-</a>
-<p>Contact:+91 89836 51722</p>
-</div>
-
-</div>
-
+  </div>
 </section>
 
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="contact-box reveal">
+      <div class="contact-content">
+        <div>
+          <div class="section-label">Get in touch</div>
+          <h2>Need Something? Let's Talk.</h2>
+          <p>Call us for enquiries or connect with us on Instagram.</p>
+          <p style="margin-top:10px;"><strong>📍 Address:</strong> Galaxy General Store, Akot Fail, near Famous Bakery, Akola.</p>
+        </div>
 
+        <div class="contact-actions">
+          <a href="tel:+918983651722" class="btn btn-primary">📞 +91 89836 51722</a>
+          <a href="https://www.instagram.com/galaxygenralstore0/" target="_blank" rel="noopener" class="btn btn-outline">📷 Instagram</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
 
 <footer>
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img src="galaxy.jpg" alt="Galaxy General Store logo">
+      <strong>Galaxy General Store</strong>
+    </div>
 
-<p>
-© 2026 <strong>Galaxy General Store</strong>.
-All Rights Reserved.
-</p>
+    <div class="footer-text">
+      <div>📍 Galaxy General Store, Akot Fail, near Famous Bakery, Akola</div>
+      <div style="margin-top:5px;">© 2026 Galaxy General Store. All rights reserved.</div>
+    </div>
 
-<p>
-✨ Thank You For Visiting ✨
-</p>
-
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
 </footer>
 
+<script>
+const navLinks = document.getElementById("navLinks");
+const menuBtn = document.getElementById("menuBtn");
+
+function toggleMenu(){
+  navLinks.classList.toggle("active");
+  const isOpen = navLinks.classList.contains("active");
+  menuBtn.setAttribute("aria-expanded", isOpen);
+  menuBtn.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+  menuBtn.textContent = isOpen ? "✕" : "☰";
+}
+
+document.querySelectorAll(".nav-links a").forEach(link=>{
+  link.addEventListener("click",()=>{
+    navLinks.classList.remove("active");
+    menuBtn.setAttribute("aria-expanded","false");
+    menuBtn.setAttribute("aria-label","Open menu");
+    menuBtn.textContent="☰";
+  });
+});
+
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:.12});
+
+document.querySelectorAll(".reveal, .card").forEach(el=>observer.observe(el));
+
+document.querySelectorAll(".card").forEach((card,index)=>{
+  card.style.transitionDelay = `${index * 80}ms`;
+});
+</script>
 
 </body>
 </html>
-
